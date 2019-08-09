@@ -4,8 +4,14 @@ class Result extends  React.Component{
 
     render(){
         return(
-            <div>
-                
+            <div className="result" display="flex">
+                <label>4</label>
+                <label>5</label>
+                <label>778</label>
+                <label>9</label>
+                <label>No</label>
+                <label>X</label>
+
             </div>
         )
     }

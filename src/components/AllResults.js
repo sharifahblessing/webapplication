@@ -1,4 +1,5 @@
 import React from "react"
+import Result from "./result"
 
 class AllResults extends  React.Component{
 
@@ -15,7 +16,7 @@ class AllResults extends  React.Component{
                     <label>Remove</label>
                 </div>
                 <div>
-                    
+                   <Result/>
                 </div>
                 
             </div>
