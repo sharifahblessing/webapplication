@@ -7,17 +7,17 @@ class PostForm extends React.Component {
       <h1>Numbers</h1>
       <form>
         <div className="numbers">
-          <h2>Number one</h2>
+          <label>Number one</label><br/>
           <input placeholder="Enter number one" required type="number" />
         </div>
         <br />
         <div className="numbers">
-          <h2>Number two</h2>
+          <label>Number two</label><br/>
           <input placeholder="Enter number two" required type="number" />
         </div>
         <br />
         <div className="operationPicker">
-          <h2>Operation</h2>
+          <label>Operation</label><br/>
           <select>
               <option value="Add">Add</option>
               <option value="Subtract">Subtract</option>
