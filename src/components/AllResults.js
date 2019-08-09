@@ -1,23 +1,71 @@
 import React from "react"
-import Result from "./result"
+import PostForm from "./postform";
+// import Result from "./result"
 
 class AllResults extends  React.Component{
+    state = {
+        number1:'',
+        number2:'',
+        operation:'',
+        result:'',
+        totalResults:[]
+      }
+    handleSData = (formData) => {
+        let result, tempResult;
+        if(formData.operation === ''){
+           return ;
+        }
+        if(formData.operation === 'Subtract'){
+            result = parseInt(formData.number1) - parseInt(formData.number2);
+        }
+        if(formData.operation === 'Add'){
+            result = parseInt(formData.number1) + parseInt(formData.number2);
+        }if(formData.operation === 'Divide'){
+            result = parseInt(formData.number1) / parseInt(formData.number2);
+        }if(formData.operation === 'Multiply'){
+            result = parseInt(formData.number1) * parseInt(formData.number2);
+        }
+
+        tempResult = {
+            number1:formData.number1,
+            number2:formData.number2,
+            operation:formData.operation,
+            result:result
+        }
+        const items = [...this.state.totalResults, tempResult];
+        this.setState({
+            totalResults: items
+        })
+        console.log(this.state.totalResults);
+    }
 
     render(){
+        const final = this.state.totalResults;
         return(
             <div>
-                <h1>Results</h1>
-                <div className="resultsbar">
-                    <label>Number 1</label>
-                    <label>Number 2</label>
-                    <label>Response</label>
-                    <label>Expected</label>
-                    <label>Passed</label>
-                    <label>Remove</label>
-                </div>
-                <div>
-                   <Result/>
-                </div>
+                
+              <PostForm handleData={this.handleSData}/>
+              <h1>Results</h1>
+                <table className="resultsbar">
+                    <thead>
+                        <th>Number1</th>
+                        <th>Number2</th>
+                        <th>Operation</th>
+                        <th>Result</th>
+                    </thead>
+                    <tbody>
+                    {
+                        final.map((finalresult, index)  => (
+                            <tr key={index}>
+                            <td>{finalresult.number1}</td>
+                            <td>{finalresult.number2}</td>
+                            <td>{finalresult.operation}</td>
+                            <td>{finalresult.result}</td>
+                            </tr>
+                        ))
+                    }
+                    </tbody>
+                </table>
                 
             </div>
         )

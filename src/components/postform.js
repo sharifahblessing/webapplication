@@ -1,5 +1,5 @@
 import React from "react";
-import AllResult from "./result"
+// import AllResult from "./result"
 class PostForm extends React.Component {
   state = {
     number1:'',
@@ -9,7 +9,7 @@ class PostForm extends React.Component {
 
   submitArithmeticOperation = (e) => {
     e.preventDefault();
-    console.log(this.state)
+   this.props.handleData(this.state);
    
   }
   onChangeHandler = e => {
@@ -24,7 +24,7 @@ class PostForm extends React.Component {
       return(
     <div>
       <h1>Numbers</h1>
-      <form onSubmit={this.submitArithmeticOperation}>
+      <form >
         <div className="numbers">
           <label>Number one</label><br/>
           <input name="number1" onChange={this.onChangeHandler} value={number1} placeholder="Enter number one"  type="number" />
@@ -38,6 +38,7 @@ class PostForm extends React.Component {
         <div className="operationPicker">
           <label>Operation</label><br/>
           <select name="operation" onChange={this.onChangeHandler} value={operation}>
+              <option val="" >choose ...</option>
               <option val="Add" >Add</option>
               <option val="Subtract">Subtract</option>
               <option val="Divide">Divide</option>
@@ -45,10 +46,10 @@ class PostForm extends React.Component {
           </select>
         </div>
         <br />
-        <button type="submit">Post</button>
+        <button type="submit" onClick={this.submitArithmeticOperation}>Post</button>
       </form>
-
-      <AllResult></AllResult>
+        {/* <h4>Results</h4> */}
+      {/* <AllResult result={this.submitArithmeticOperation}></AllResult> */}
       </div>);
   }
 }
