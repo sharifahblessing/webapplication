@@ -28,17 +28,17 @@ class PostForm extends React.Component {
       <form >
         <div className="numbers">
           <label>Number one</label><br/>
-          <input name="number1" onChange={this.onChangeHandler} value={number1} placeholder="Enter number one"  type="number" />
+          <input className="feilds" name="number1" onChange={this.onChangeHandler} value={number1} placeholder="Enter number one"  type="number" />
         </div>
         <br />
         <div className="numbers">
           <label>Number two</label><br/>
-          <input name="number2" onChange={this.onChangeHandler} value={number2} placeholder="Enter number two"  type="number" />
+          <input  className="feilds" name="number2" onChange={this.onChangeHandler} value={number2} placeholder="Enter number two"  type="number" />
         </div>
         <br />
         <div className="operationPicker">
           <label>Operation</label><br/>
-          <select name="operation" onChange={this.onChangeHandler} value={operation}>
+          <select  className="feildselect" name="operation" onChange={this.onChangeHandler} value={operation}>
               <option val="" >choose ...</option>
               <option val="Add" >Add</option>
               <option val="Subtract">Subtract</option>
