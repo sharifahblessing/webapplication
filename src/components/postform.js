@@ -1,4 +1,5 @@
 import React from "react";
+import  "./componentcss/postform.css";
 // import AllResult from "./result"
 class PostForm extends React.Component {
   state = {
@@ -22,7 +23,7 @@ class PostForm extends React.Component {
   render() {
     const {number1, number2, operation} = this.state;
       return(
-    <div>
+    <div className="postform">
       <h1>Numbers</h1>
       <form >
         <div className="numbers">
@@ -46,7 +47,7 @@ class PostForm extends React.Component {
           </select>
         </div>
         <br />
-        <button type="submit" onClick={this.submitArithmeticOperation}>Post</button>
+        <button className="button"type="submit" onClick={this.submitArithmeticOperation}>Post</button>
       </form>
         {/* <h4>Results</h4> */}
       {/* <AllResult result={this.submitArithmeticOperation}></AllResult> */}

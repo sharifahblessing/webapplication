@@ -1,0 +1,16 @@
+.webdisplay {
+    
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+   
+    
+  }
+  .resultsdisplay{
+      margin-left:10px;
+      margin-right:10px;
+  }
+  .tableheading{
+    background-color: #282c34;
+    color:chocolate
+  }

@@ -1,0 +1,15 @@
+.postform {
+    background-color: #282c34;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    min-width: 400px;
+ 
+  }
+  .button{
+    background-color:chocolate;
+    width:150px;
+    height:20px
+  }

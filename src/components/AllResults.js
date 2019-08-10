@@ -1,6 +1,7 @@
 import React from "react"
 import PostForm from "./postform";
-// import Result from "./result"
+import  "./componentcss/allresults.css";
+// import Expected from "./result"
 
 class AllResults extends  React.Component{
     state = {
@@ -42,16 +43,19 @@ class AllResults extends  React.Component{
     render(){
         const final = this.state.totalResults;
         return(
-            <div>
+            <div className="webdisplay">
                 
               <PostForm handleData={this.handleSData}/>
+              <div className="resultsdisplay">
               <h1>Results</h1>
                 <table className="resultsbar">
-                    <thead>
+                    <thead className="tableheading">
                         <th>Number1</th>
                         <th>Number2</th>
-                        <th>Operation</th>
-                        <th>Result</th>
+                        <th>Response</th>
+                        <th>Expected</th>
+                        <th>Passed</th>
+                        <th>Remove</th>
                     </thead>
                     <tbody>
                     {
@@ -66,6 +70,7 @@ class AllResults extends  React.Component{
                     }
                     </tbody>
                 </table>
+                </div>
                 
             </div>
         )
